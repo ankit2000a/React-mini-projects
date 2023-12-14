@@ -37,3 +37,48 @@ body {
     font-weight: 500;
   }
 }
+
+.form {
+  flex-direction: column;
+  gap: 2rem;
+  padding: 4rem 2rem;
+}
+
+.input-group {
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+input[type="text"] {
+  padding: 1rem 0.66525rem;
+  width: 20rem;
+  border-radius: 0.307rem;
+  border: 0.819px solid black;
+  background: var(--white, #fff);
+  box-shadow: 0px 0.819px 1.637px 0px rgba(0, 0, 0, 0.05);
+}
+
+input[type="submit"] {
+  color: #fff;
+  font-size: 1.2625rem;
+  width: 100%;
+  min-width: 42rem;
+  padding: 1rem;
+  border-radius: 0.3125rem;
+  background: linear-gradient(90deg, #711f8d 1.14%, #a818da 100%);
+  font-weight: 700;
+  letter-spacing: -0.1rem;
+  cursor: pointer;
+  transition: all 1s ease-in-out;
+
+  &:active {
+    transform: translate( 0.5rem, 0.5rem);
+  }
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
