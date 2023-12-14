@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+}
+
+.flex-js-al {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar {
+  justify-content: space-between;
+  color: #fff;
+  padding: 1.875rem;
+  background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
+}
+
+.logo {
+  column-gap: 0.5rem;
+
+  span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.12969rem;
+  }
+}
+
+.links {
+  span {
+    font-size: 0.975rem;
+    font-weight: 500;
+  }
+}
