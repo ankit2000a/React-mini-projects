@@ -1,7 +1,12 @@
-import React from 'react';
+import React from "react";
+import Navbar from "./components/Navbar";
+import Body from "./components/Body";
 
 export default function App() {
-    return (
-        <></>
-    )
+  return (
+    <>
+      <Navbar />
+      <Body />
+    </>
+  );
 }
