@@ -10,6 +10,7 @@ export default function Meme() {
     setImage(path.url);
     console.log(path.url);
   }
+
   return (
     <div className="form flex-js-al">
       <div className="input-group flex-js-al">
@@ -32,7 +33,6 @@ export default function Meme() {
       <div className="display-img">
         <img src={image} alt="image-0" />
       </div>
-      <div className="div"></div>
     </div>
   );
 }
