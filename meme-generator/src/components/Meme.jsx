@@ -1,31 +1,15 @@
 import React from "react";
+import { useState } from "react";
+import memesData from "../data";
 
 export default function Meme() {
-    const thingArray = ['Thing 1', 'Thing 2'];
-    const addThing = () => {
-        let thing = `Thing ${thingArray.length + 1}`;
-        thingArray.push(thing)
-        console.log(thingArray)
-    }
-
-    const date = new Date();
-    const hours = date.getHours();
-
-    const greeting = () => {
-        let greet;
-        switch (greet) {
-            case if(4 <= hours <= 12):
-                greet = 'Good Morning'
-                // break;
-            case (13 <= hours <= 17):
-                greet = 'good afternoon'
-                // break;
-            case (18 <= hours <= 24):
-                greet = 'good night';
-        }
-        console.log(greet)
-    }
-
+  const [image, setImage] = useState("src/assets/meme-4.avif");
+  function handleClick() {
+    let index = Math.floor(Math.random() * memesData.data.memes.length);
+    let path = memesData.data.memes[index];
+    setImage(path.url);
+    console.log(path.url);
+  }
   return (
     <div className="form flex-js-al">
       <div className="input-group flex-js-al">
@@ -39,8 +23,16 @@ export default function Meme() {
         </div>
       </div>
       <div className="submit-btn">
-        <input type="submit" value="Get a new meme image" onClick={greeting}/>
+        <input
+          type="submit"
+          value="Get a new meme image"
+          onClick={handleClick}
+        />
       </div>
+      <div className="display-img">
+        <img src={image} alt="image-0" />
+      </div>
+      <div className="div"></div>
     </div>
   );
 }
