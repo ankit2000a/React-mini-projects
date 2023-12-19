@@ -84,5 +84,23 @@ label {
 }
 
 .display-img {
+  position: relative;
+  text-align: center;
   border: 2px solid magenta;
+}
+
+p {
+  position: absolute;
+  font-size: 3rem;
+  font-weight: 800;
+  color: rgb(255, 0, 0);
+  width: 100%;
+}
+
+.top-text {
+  top: 2rem;
+}
+
+.bottom-text {
+  bottom: 2rem;
 }
