@@ -1,0 +1,67 @@
+.box {
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  border: 1px solid rgb(131, 131, 131);
+  font-size: 2rem;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  width: 430px;
+}
+
+.is-on {
+  background: rgb(191, 16, 255);
+  /* color: rgb(0, 28, 85); */
+}
+
+/* JOKES PROJECT */
+.cards {
+  position: relative;
+  text-align: center;
+  width: 700px;
+  padding: 1rem;
+  background-color: rgb(62, 63, 64);
+  /* color: navy; */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+/* button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+  background: greenyellow;
+  color: maroon;
+  border: none;
+  cursor: pointer;
+} */
+
+button {
+  background: purple;
+  color: white;
+  font-size: 1rem;
+  padding: 1rem 3rem;
+  border: none;
+  cursor: pointer;
+}
+span {
+  font-size: 2rem;
+  color: blueviolet;
+}
+
+.form-display {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
