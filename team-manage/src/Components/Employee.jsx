@@ -1,31 +1,36 @@
 import femaleProfile from "../Assets/femaleProfile.jpeg";
 import maleProfile from "../Assets/maleProfile.jpg";
 
-const Employee = (props) => {
+const Employee = ({
+  employees,
+  selectedTeam,
+  handleSelectedTeamChange,
+  handleEmployeeCardClick,
+}) => {
   return (
     <main className="container">
       <div className="row justify-content-center mt-3 mb-3">
         <div className="col-6">
           <select
             className="form-select form-select-lg"
-            value={props.selectedTeam}
-            onChange={props.handleSelectedTeamChange}
+            value={selectedTeam}
+            onChange={handleSelectedTeamChange}
           >
-            <option value="TeamA">Team-A</option>
-            <option value="TeamB">Team-B</option>
-            <option value="TeamC">Team-C</option>
-            <option value="TeamD">Team-D</option>
+            <option value="TeamA">TeamA</option>
+            <option value="TeamB">TeamB</option>
+            <option value="TeamC">TeamC</option>
+            <option value="TeamD">TeamD</option>
           </select>
         </div>
       </div>
       <div className="row justify-content-center mt-3 mb-3">
         <div className="col-8">
           <div className="card-collection">
-            {props.Employees.map((employ) => (
+            {employees.map((employ) => (
               <div
                 key={employ.id}
                 className={
-                  employ.teamName === props.selectedTeam
+                  employ.teamName === selectedTeam
                     ? "card m-2 standout"
                     : "card m-2"
                 }
