@@ -155,7 +155,13 @@ export default function App() {
         ></Route>
         <Route
           path="/GroupedTeamMember"
-          element={<GroupedTeamMember />}
+          element={
+            <GroupedTeamMember
+            Employees={Employees}
+              setSelectedTeam={setSelectedTeam}
+              selectedTeam={selectedTeam}
+            />
+          }
         ></Route>
         <Route path="*" element={<PageNotFound />}></Route>
       </Routes>
