@@ -157,7 +157,7 @@ export default function App() {
           path="/GroupedTeamMember"
           element={
             <GroupedTeamMember
-            Employees={Employees}
+              Employees={Employees}
               setSelectedTeam={setSelectedTeam}
               selectedTeam={selectedTeam}
             />
