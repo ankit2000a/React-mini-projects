@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Nav from "./Components/Nav";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
-import Employee from "./Components/Employee";
-import GroupedTeamMember from "./Components/GroupedTeamMember";
-import PageNotFound from "./Components/PageNotFound";
+const Nav = React.lazy(() => import("./Components/Nav"));
+const Header = React.lazy(() => import("./Components/Header"));
+const Footer = React.lazy(() => import("./Components/Footer"));
+const Employee = React.lazy(() => import("./Components/Employee"));
+const PageNotFound = React.lazy(() => import("./Components/PageNotFound"));
+const GroupedTeamMember = React.lazy(() =>
+  import("./Components/GroupedTeamMember")
+);
 
 export default function App() {
   // selected team state:
@@ -145,22 +147,26 @@ export default function App() {
         <Route
           path="/"
           element={
-            <Employee
-              employees={Employees}
-              selectedTeam={selectedTeam}
-              handleSelectedTeamChange={handleSelectedTeamChange}
-              handleEmployeeCardClick={handleEmployeeCardClick}
-            />
+            <Suspense fallback={<Loading />}>
+              <Employee
+                employees={Employees}
+                selectedTeam={selectedTeam}
+                handleSelectedTeamChange={handleSelectedTeamChange}
+                handleEmployeeCardClick={handleEmployeeCardClick}
+              />
+            </Suspense>
           }
         ></Route>
         <Route
           path="/GroupedTeamMember"
           element={
-            <GroupedTeamMember
-              Employees={Employees}
-              setSelectedTeam={setSelectedTeam}
-              selectedTeam={selectedTeam}
-            />
+            <Suspense fallback={<Loading />}>
+              <GroupedTeamMember
+                Employees={Employees}
+                setSelectedTeam={setSelectedTeam}
+                selectedTeam={selectedTeam}
+              />
+            </Suspense>
           }
         ></Route>
         <Route path="*" element={<PageNotFound />}></Route>
