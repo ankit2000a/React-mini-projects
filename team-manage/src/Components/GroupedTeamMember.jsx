@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import AppContext from "../context";
 
-const GroupedTeamMember = ({ Employees, selectedTeam, setSelectedTeam }) => {
+const GroupedTeamMember = () => {
+  const { Employees, selectedTeam, setSelectedTeam } = useContext(AppContext);
   const [groupedTeamData, setGroupedTeamData] = useState(groupedTeamMembers());
 
   // get all team members grouped:
@@ -58,7 +60,7 @@ const GroupedTeamMember = ({ Employees, selectedTeam, setSelectedTeam }) => {
               <hr />
               {item.teamMembers.map((member) => {
                 return (
-                  <div className="mt-2">
+                  <div key={member.id} className="mt-2">
                     <h5 className="card-title mt-2">
                       <span className="text-dark">
                         Full-Name: {member.fullName}
@@ -77,4 +79,3 @@ const GroupedTeamMember = ({ Employees, selectedTeam, setSelectedTeam }) => {
 };
 
 export default GroupedTeamMember;
-

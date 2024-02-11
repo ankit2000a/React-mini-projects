@@ -1,4 +1,11 @@
-const Header = ({ selectedTeam, selectedTeamMemberCount }) => {
+import { useContext } from "react";
+import AppContext from "../context";
+
+const Header = () => {
+  const { selectedTeam, Employees } = useContext(AppContext);
+  const selectedTeamMemberCount = Employees.filter(
+    (employee) => employee.teamName === selectedTeam
+  ).length;
   return (
     <header className="container">
       <div className="row justify-content-center mt-3 mb-4">

@@ -1,4 +1,8 @@
-const Team = ({ selectedTeam, handleSelectedTeamChange }) => {
+import { useContext } from "react";
+import AppContext from "../context";
+
+const Team = () => {
+  const { selectedTeam, handleSelectedTeamChange } = useContext(AppContext);
   return (
     <select
       className="form-select form-select-lg"

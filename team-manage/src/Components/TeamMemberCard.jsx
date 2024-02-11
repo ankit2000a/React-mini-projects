@@ -1,7 +1,10 @@
 import femaleProfile from "../Assets/femaleProfile.jpeg";
 import maleProfile from "../Assets/maleProfile.jpg";
+import { useContext } from "react";
+import AppContext from "../context";
 
-const TeamMemberCard = ({ employ, handleEmployeeCardClick, selectedTeam }) => {
+const TeamMemberCard = ({ employ }) => {
+  const { handleEmployeeCardClick, selectedTeam } = useContext(AppContext);
   return (
     <div
       key={employ.id}
